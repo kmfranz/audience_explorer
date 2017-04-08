@@ -152,7 +152,7 @@ def send_js(path):
     return send_from_directory('js', path)
 
 @app.route('/resources/<path:path>')
-def send_js(path):
+def send_resources(path):
     return send_from_directory('resources', path)
 
 @app.route('/')
