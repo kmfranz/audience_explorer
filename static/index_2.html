@@ -138,10 +138,10 @@ function loadMap(){
 		}
 
     color = d3.scaleThreshold()
-  	    .domain(d3.range(min_color * 10, max_color * 10))
+  	    .domain(d3.range(0, 10))
   	    .range(d3.schemeBlues[9]);
 
-    console.log({"min-color":min_color * 10, "max-color":max_color * 10})
+    //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
 
 
@@ -156,7 +156,7 @@ function loadMap(){
 				.style("fill", function(d) {
 
 				// Get data value
-				var value = d.properties.microAmount * 10;
+				var value = (d.properties.microAmount - min_color) / (max_color - min_color) * 10;
         console.log(value)
 
 				if (value) {
