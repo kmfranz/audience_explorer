@@ -48,6 +48,16 @@ body {
 </style>
 </head>
 <body>
+
+<div class = 'nav-bar'>
+Top bar
+</div>
+
+<div id = 'map-container'>
+
+</div>
+
+
 <script type="text/javascript">
 
 /*  This visualization was made possible by modifying code provided by:
@@ -84,7 +94,7 @@ function loadMap(){
 	var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
 
 	//Create SVG element and append map to the SVG
-	var svg = d3.select("body")
+	var svg = d3.select("#map-container")
 				.append("svg")
 				.attr("width", width)
 				.attr("height", height);
