@@ -147,6 +147,16 @@ def loadLocationStats(client):
 
 app = Flask("server")
 
+app = Flask(__name__, static_url_path='')
+
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('js', path)
+
+@app.route('/')
+def root():
+    return app.send_static_file('index_2.html')
+
 @app.route("/")
 def getCpc():
     return Response(json.dumps(loadLocationStats(adwords_client)), mimetype='application/json')
