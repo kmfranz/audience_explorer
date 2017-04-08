@@ -249,7 +249,7 @@ function loadMap(){
 
     var linear = d3.scaleLinear()
   .domain([min_color,max_color])
-  .range(["#08306B", "#F4F9FE"]);
+  .range(["#F4F9FE", "#08306B"]);
 
 var svg = d3.select("svg");
 
@@ -260,7 +260,8 @@ svg.append("g")
 var legendLinear = d3.legendColor()
   .shapeWidth(30)
   .cells(10)
-  .scale(linear);
+  .scale(linear)
+  .title("Cost per Click ($)");
 
 svg.select(".legendLinear")
   .call(legendLinear);
