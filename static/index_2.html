@@ -249,7 +249,7 @@ function loadMap(){
 
     var quantize = d3.scaleQuantize()
       .domain([ min_color, max_color])
-      .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+      .range(d3.schemeBlues[9])
 
     var svg = d3.select("svg");
 
