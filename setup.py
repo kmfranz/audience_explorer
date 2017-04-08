@@ -155,7 +155,7 @@ def send_js(path):
 
 @app.route('/')
 def root():
-    return app.send_static_file('index_2.html')
+    return app.send_static_file('index_2.gohtml')
 
 @app.route("/api/data")
 def getCpc():
