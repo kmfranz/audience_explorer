@@ -9,7 +9,7 @@ import cPickle as pickle
 
 import json
 # get this object
-from flask import Response, send_from_director
+from flask import Response, send_from_directory
 
 
 
