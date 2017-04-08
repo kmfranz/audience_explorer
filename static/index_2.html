@@ -138,7 +138,7 @@ function loadMap(){
 		}
 
     color = d3.scaleThreshold()
-  	    .domain(d3.range(min_color, max_color))
+  	    .domain(d3.range(min_color * 10, max_color * 10))
   	    .range(d3.schemeBlues[9]);
 
     console.log({"min-color":min_color * 10, "max-color":max_color * 10})
