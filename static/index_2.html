@@ -137,9 +137,8 @@ function loadMap(){
 			}
 		}
 
-    color = d3.scaleThreshold()
+    color = d3.scaleSequential(d3.interpolateViridis)
   	    .domain(d3.range(0, 10))
-  	    .range(d3.interpolatePlasma[9]);
 
     //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
