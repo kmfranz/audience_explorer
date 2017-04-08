@@ -247,9 +247,9 @@ function loadMap(){
 
     //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
-    var linear = d3.scaleLinear()
+    var linear = d3.scaleThreshold()
   .domain([min_color,max_color])
-  .range(["#F4F9FE", "#08306B"]);
+  .range(d3.schemeBlues[9]);
 
 var svg = d3.select("svg");
 
@@ -261,7 +261,7 @@ var legendLinear = d3.legendColor()
   .shapeWidth(30)
   .cells(10)
   .scale(linear)
-  .title("Cost per Click ($)");
+  .title("Average Cost per Click ($)");
 
 svg.select(".legendLinear")
   .call(legendLinear);
