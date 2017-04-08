@@ -114,7 +114,7 @@ function loadMap(){
 				if (user_state == jsonState) {
 
 				// Copy the data value into the JSON
-				json.features[j].properties.users = state_user_count[i].microAmount;
+				json.features[j].properties.microAmount = state_user_count[i].microAmount;
 
 				// Stop looking through the JSON
 				break;
