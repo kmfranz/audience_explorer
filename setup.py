@@ -151,6 +151,10 @@ app = Flask(__name__, static_url_path='')
 def send_js(path):
     return send_from_directory('js', path)
 
+@app.route('/resources/<path:path>')
+def send_js(path):
+    return send_from_directory('resources', path)
+
 @app.route('/')
 def root():
     return app.send_static_file('index_2.html')
