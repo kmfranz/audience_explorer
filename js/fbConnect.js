@@ -58,7 +58,7 @@ function fetchStatesReach(){
   $.get("https://franzsoftware.com/api/data")
     .done(function(data){
       for ele in data{
-        state_user_count.push(ele)
+          state_user_count.push(ele)
       }
     })
 
