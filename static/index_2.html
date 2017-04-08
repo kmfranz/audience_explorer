@@ -241,9 +241,9 @@ function loadMap(){
 			}
 		}
 
-    color = d3.scaleThreshold()
-  	    .domain(d3.range(0, 10))
-  	    .range(d3.schemeBlues[9]);
+    color =  d3.scaleLinear()
+  .domain([min_color / 10000,max_color/10000])
+  .range(["#F4F9FE", "#08306B"]);
 
     //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
@@ -279,7 +279,7 @@ svg.select(".legendLinear")
 				.style("fill", function(d) {
 
 				// Get data value
-				var value = (d.properties.microAmount - min_color) / (max_color - min_color) * 10;
+				var value = d.properties.microAmount/10000;
         console.log(value)
 
 				if (value) {
