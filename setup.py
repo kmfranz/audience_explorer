@@ -91,7 +91,7 @@ def loadLocationStats(client):
 
         keywords = [
             #{'text':'alabama'}
-            {'text':'golden state warriors'}
+            {'text':'leather hand bags'}
         ]
 
         keyword_estimates_requests = []
