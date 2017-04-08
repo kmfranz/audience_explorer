@@ -276,7 +276,7 @@ function loadMap(){
 	// Map the cities I have lived in!
 
   var quantize = d3.scaleQuantize()
-    .domain([ min_color, max_color ])
+    .domain([ min_color/10000, max_color/10000 ])
     .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
   var svg = d3.select("svg");
