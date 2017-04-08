@@ -247,24 +247,23 @@ function loadMap(){
 
     //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
-    var quantize = d3.scaleQuantize()
-      .domain([ min_color, max_color])
-      .range(d3.schemeBlues[9])
+    var linear = d3.scaleLinear()
+  .domain([min_color,max_color])
+  .range(d3.schemeBlues[9]);
 
-    var svg = d3.select("svg");
+var svg = d3.select("svg");
 
-    svg.append("g")
-      .attr("class", "legendQuant")
-      .attr("transform", "translate(20,20)");
+svg.append("g")
+  .attr("class", "legendLinear")
+  .attr("transform", "translate(20,20)");
 
-    var legend = d3.legendColor()
-      .useClass(true)
-      .title("Cost per Click")
-      .titleWidth(100)
-      .scale(quantize);
+var legendLinear = d3.legendColor()
+  .shapeWidth(30)
+  .cells(10)
+  .scale(linear);
 
-    svg.select(".legendQuant")
-      .call(legend);
+svg.select(".legendLinear")
+  .call(legendLinear);
 
 
 
