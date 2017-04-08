@@ -157,7 +157,7 @@ def send_js(path):
 def root():
     return app.send_static_file('index_2.html')
 
-@app.route("/")
+@app.route("/api/data")
 def getCpc():
     return Response(json.dumps(loadLocationStats(adwords_client)), mimetype='application/json')
 
