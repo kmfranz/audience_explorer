@@ -141,7 +141,7 @@ function loadMap(){
   	    .domain(d3.range(min_color, max_color))
   	    .range(d3.schemeBlues[9]);
 
-    console.log({"min-color":min_color, "max-color":max_color})
+    console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
 
 
@@ -156,8 +156,7 @@ function loadMap(){
 				.style("fill", function(d) {
 
 				// Get data value
-				var value = d.properties.microAmount;
-        console.log(value)
+				var value = d.properties.microAmount * 10;
 
 				if (value) {
 				//If value exists…
