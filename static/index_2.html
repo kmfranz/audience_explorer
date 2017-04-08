@@ -275,24 +275,25 @@ function loadMap(){
 	});
 	// Map the cities I have lived in!
 
-  var linear = d3.scaleLinear()
-    .domain([0,10])
-    .range(["rgb(46, 73, 123)", "rgb(71, 187, 94)"]);
+  var quantize = d3.scaleQuantize()
+    .domain([ min_color, max_color ])
+    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
   var svg = d3.select("svg");
 
   svg.append("g")
-    .attr("class", "legendLinear")
+    .attr("class", "legendQuant")
     .attr("transform", "translate(20,20)");
 
-  var legendLinear = d3.legendColor()
-    .shapeWidth(30)
-    .cells(10)
-    .orient('horizontal')
-    .scale(linear);
+  var legend = d3.legendColor()
+    .labelFormat(d3.format(".2f"))
+    .useClass(true)
+    .title("Cost per Click")
+    .titleWidth(100)
+    .scale(quantize);
 
-  svg.select(".legendLinear")
-    .call(legendLinear);
+  svg.select(".legendQuant")
+    .call(legend);
 
 
 
