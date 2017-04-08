@@ -145,8 +145,6 @@ def loadLocationStats(client):
     return microAmounts
 
 
-app = Flask("server")
-
 app = Flask(__name__, static_url_path='')
 
 @app.route('/js/<path:path>')
