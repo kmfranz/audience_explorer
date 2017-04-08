@@ -248,8 +248,8 @@ function loadMap(){
     //console.log({"min-color":min_color * 10, "max-color":max_color * 10})
 
     var linear = d3.scaleLinear()
-  .domain([min_color * 10,max_color * 10 ])
-  .range(d3.schemeBlues[9]);
+  .domain([min_color,max_color])
+  .range(["#08306B", "#F4F9FE"]);
 
 var svg = d3.select("svg");
 
