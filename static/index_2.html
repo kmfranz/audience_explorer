@@ -271,29 +271,33 @@ function loadMap(){
 				return "rgb(213,222,217)";
 				}
 			});
+
+      var quantize = d3.scaleQuantize()
+        .domain([ min_color, max_color])
+        .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+
+      var svg = d3.select("svg");
+
+      svg.append("g")
+        .attr("class", "legendQuant")
+        .attr("transform", "translate(20,20)");
+
+      var legend = d3.legendColor()
+        .labelFormat(d3.format(".2f"))
+        .useClass(true)
+        .title("Cost per Click")
+        .titleWidth(100)
+        .scale(quantize);
+
+      svg.select(".legendQuant")
+        .call(legend);
+        
 		});
+
 	});
 	// Map the cities I have lived in!
 
-  var quantize = d3.scaleQuantize()
-    .domain([ min_color/10000, max_color/10000 ])
-    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
-  var svg = d3.select("svg");
-
-  svg.append("g")
-    .attr("class", "legendQuant")
-    .attr("transform", "translate(20,20)");
-
-  var legend = d3.legendColor()
-    .labelFormat(d3.format(".2f"))
-    .useClass(true)
-    .title("Cost per Click")
-    .titleWidth(100)
-    .scale(quantize);
-
-  svg.select(".legendQuant")
-    .call(legend);
 
 
 
