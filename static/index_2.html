@@ -275,7 +275,7 @@ function loadMap(){
 	// Map the cities I have lived in!
 
 sampleNumerical = [1,2.5,5,10,20];
- sampleThreshold=d3.scaleThreshold().domain(sampleNumerical).range(colorbrewer.Reds[5]);
+ sampleThreshold=d3.scaleThreshold().domain(sampleNumerical).range(d3.schemeBlues[5]);
  horizontalLegend = d3.svg.legend().units("Miles").cellWidth(80).cellHeight(25).inputScale(sampleThreshold).cellStepping(100);
 
  d3.select("svg").append("g").attr("transform", "translate(50,70)").attr("class", "legend").call(horizontalLegend);
